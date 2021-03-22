@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "start http://localhost:3000 && node server.js ",
     "start": "webpack --mode development --watch",
-    "build": "webpack --mode production"
-    
+    "build": "webpack --mode production",
+    "new": "node createComponent.js"
   },
   "author": "",
   "license": "ISC",

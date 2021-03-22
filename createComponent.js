@@ -15,8 +15,8 @@ const argv = yargs
             console.log('hello')
         }
         const filenameWithExt = argv.filename + '.js';
-        const defaultFilePath = `./src/components/${filenameWithExt}`;
-        const filepath = path.resolve((argv.filepath || __dirname), filenameWithExt);
+        const defaultFilePath = "./src/components/";
+        const filepath = path.resolve(((argv.filepath) ? argv.filepath : defaultFilePath), filenameWithExt);
         const defaultFunctional = `
 import React from "react";
         
@@ -30,7 +30,7 @@ function ${argv.filename} () {
 
 export default ${argv.filename};`;
 
-        fs.writeFile((filepath || defaultFilePath), defaultFunctional)
+        fs.writeFile((filepath), defaultFunctional)
             .then(() => console.log(successColor("Your component has been saved successfully")))
             .catch(e => console.error(errorColor("As error has occured"), e));
 
